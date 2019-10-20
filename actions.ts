@@ -1,1 +1,3 @@
-export type Actions = { type: never }
+export type Actions =
+  | { type: 'INCREMENT', by?: number }
+  | { type: 'DECREMENT', by?: number }

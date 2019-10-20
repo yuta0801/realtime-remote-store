@@ -1,5 +1,9 @@
-interface State {}
+interface State {
+  count: number
+}
 
-const state: State = {}
+const state: State = {
+  count: 0,
+}
 
 export default state
