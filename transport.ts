@@ -6,6 +6,8 @@ export const createServer = <T>(initialState: T) => {
   const send = new BehaviorSubject<T>(initialState)
   const server = new WebSocket.Server({ port: 8080 })
 
+  console.log('websokcet server started')
+
   server.on('connection', socket => {
     console.log('total clients:', server.clients.size)
 
