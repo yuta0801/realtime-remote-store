@@ -1,8 +1,7 @@
 import { createServer } from './transport'
-import store from './store'
+import store, { initialState } from './store'
 
-// TODO: Use correct initial state
-const server = createServer(null)
+const server = createServer(initialState)
 
 server.receive.subscribe(store.in)
 
