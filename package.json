@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "ts-node ."
+  },
+  "dependencies": {
+    "rxjs": "^6.5.3",
+    "ws": "^7.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.11.1",
+    "@types/ws": "^6.0.3",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  }
+}
