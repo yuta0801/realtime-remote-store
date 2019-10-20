@@ -1,7 +1,7 @@
 import actions, * as actionTypes from './actions'
 import initialState from './state'
 import { handleActions } from 'redux-actions'
-import { ActionMaps } from '../../types'
+import { ActionMaps } from '~/types'
 
 type Actions = ActionMaps<typeof actions>
 
