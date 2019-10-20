@@ -9,6 +9,10 @@ export const createServer = <T>(initialState: T) => {
   server.on('connection', socket => {
     console.log('total clients:', server.clients.size)
 
+    socket.on('close', () => {
+      console.log('total clients:', server.clients.size)
+    })
+
     socket.on('message', message => {
       const data = JSON.parse(message.toString())
       console.log('received:', data)

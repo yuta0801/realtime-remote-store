@@ -1,6 +1,6 @@
 import { Subject } from 'rxjs'
 import { scan } from 'rxjs/operators'
-import reducer from './reducer'
+import { reducer } from './count'
 
 const store = new Subject()
 
