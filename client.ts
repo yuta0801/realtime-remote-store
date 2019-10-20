@@ -1,7 +1,7 @@
 import WebSocket from 'ws'
 import { interval } from 'rxjs'
 import { Action } from 'redux-actions'
-import { actions } from './count'
+import { actions } from './store/count'
 import { take, map } from 'rxjs/operators'
 
 const ws = new WebSocket('ws://localhost:8080')

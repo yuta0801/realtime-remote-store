@@ -1,11 +1,11 @@
 import actions, * as actionTypes from './actions'
 import initialState from './state'
 import { handleActions } from 'redux-actions'
-import { ActionMaps } from '../types'
+import { ActionMaps } from '../../types'
 
 type Actions = ActionMaps<typeof actions>
 
-const reducer = handleActions({
+const reducers = handleActions({
   [actionTypes.INCREMENT]: (state, { payload }: Actions['increment']) => {
     return { ...state, count: state.count + payload.by }
   },
@@ -14,4 +14,4 @@ const reducer = handleActions({
   },
 }, initialState)
 
-export default reducer
+export default reducers

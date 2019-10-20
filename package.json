@@ -4,12 +4,14 @@
     "test": "ts-node ."
   },
   "dependencies": {
+    "reduce-reducers": "^1.0.4",
     "redux-actions": "^2.6.5",
     "rxjs": "^6.5.3",
     "ws": "^7.2.0"
   },
   "devDependencies": {
     "@types/node": "^12.11.1",
+    "@types/reduce-reducers": "^0.3.0",
     "@types/redux-actions": "^2.6.1",
     "@types/ws": "^6.0.3",
     "ts-node": "^8.4.1",
