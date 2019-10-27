@@ -14,11 +14,12 @@ ws.on('open', () => {
 
 ws.on('message', message => {
   const data = JSON.parse(message.toString())
-  console.log(data)
+  console.log('received:', data)
 })
 
 const main = () => {
   const dispatch = (action: Action<any>) => {
+    console.log('send:', action)
     const message = JSON.stringify(action)
     ws.send(message)
   }
