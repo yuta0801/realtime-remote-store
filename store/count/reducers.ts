@@ -6,10 +6,10 @@ import { ActionMaps } from '~/types'
 type Actions = ActionMaps<typeof actions>
 
 const reducers = handleActions({
-  [actionTypes.INCREMENT]: (state, { payload }: Actions['INCREMENT']) => {
+  [actionTypes.INCREMENT]: (state, { payload }: Actions['increment']) => {
     return { ...state, count: state.count + payload.by }
   },
-  [actionTypes.DECREMENT]: (state, { payload }: Actions['DECREMENT']) => {
+  [actionTypes.DECREMENT]: (state, { payload }: Actions['decrement']) => {
     return { ...state, count: state.count - payload.by }
   },
 }, initialState)

@@ -1,9 +1,12 @@
-import { createActions } from 'redux-actions'
+import { createAction } from 'redux-actions'
 
 export const INCREMENT = 'INCREMENT'
 export const DECREMENT = 'DECREMENT'
 
-export default createActions({
-  [INCREMENT]: (by: number = 1) => ({ by }),
-  [DECREMENT]: (by: number = 1) => ({ by }),
-})
+const increment = createAction(INCREMENT, (by: number = 1) => ({ by }))
+const decrement = createAction(DECREMENT, (by: number = 1) => ({ by }))
+
+export default {
+  increment,
+  decrement
+}
