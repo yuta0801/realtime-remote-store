@@ -1,9 +1,9 @@
 import WebSocket from 'ws'
 import { Subject, BehaviorSubject } from 'rxjs'
 
-export const createServer = <T>(initialState: T) => {
-  const receive = new Subject<T>()
-  const send = new BehaviorSubject<T>(initialState)
+export const createServer = <S, R>(initialState: S) => {
+  const receive = new Subject<R>()
+  const send = new BehaviorSubject<S>(initialState)
   const server = new WebSocket.Server({ port: 8080 })
 
   console.log('websokcet server started')

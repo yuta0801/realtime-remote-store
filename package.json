@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "reduce-reducers": "^1.0.4",
+    "redux": "^4.0.4",
     "redux-actions": "^2.6.5",
     "rxjs": "^6.5.3",
     "ws": "^7.2.0"

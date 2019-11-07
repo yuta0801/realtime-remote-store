@@ -1,13 +1,14 @@
-import { Subject } from 'rxjs'
-import { scan } from 'rxjs/operators'
+import { from } from 'rxjs'
+import { createStore } from 'redux'
 import reducers from './reducers'
 
-const INIT_ACTION = { type: '@INIT' }
-export const initialState = reducers(undefined, INIT_ACTION as any)
+const store = createStore(reducers)
 
-const store = new Subject()
+const store$ = from(store)
+
+export const initialState = store.getState()
 
 export default {
-  in: store,
-  out: store.pipe(scan(reducers, initialState)),
+  in: store.dispatch,
+  out: store$,
 }
