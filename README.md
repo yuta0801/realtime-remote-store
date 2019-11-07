@@ -1,2 +1,2 @@
 # realtime-remote-store
-Realtime sync and remote dispatch Redux-like store by RxJS over WebSocket
+Realtime sync and remote dispatch Redux store by RxJS over WebSocket
