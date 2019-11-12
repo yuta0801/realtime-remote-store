@@ -1,6 +1,6 @@
 import reduceReducers from 'reduce-reducers'
 
-import { reducers as Count } from './count'
+import { reducers as Count } from './iot'
 
 const rootReducer = reduceReducers(Count)
 
