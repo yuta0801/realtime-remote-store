@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "start": "ts-node --files index.ts",
-    "test": "ts-node --files client.ts"
+    "start": "ts-node index.ts",
+    "test": "ts-node client.ts"
   },
   "dependencies": {
     "reduce-reducers": "^1.0.4",
