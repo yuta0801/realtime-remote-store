@@ -1,5 +1,5 @@
-import { from } from 'rxjs'
 import { createStore } from 'redux'
+import { from } from 'rxjs'
 import reducers from './reducers'
 
 const store = createStore(reducers)

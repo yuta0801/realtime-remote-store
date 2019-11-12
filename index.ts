@@ -1,5 +1,5 @@
-import { createServer } from './transport'
 import store, { initialState } from './store'
+import { createServer } from './transport'
 
 const server = createServer(initialState)
 
