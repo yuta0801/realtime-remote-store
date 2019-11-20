@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "realtime-remote-store",
   "version": "0.0.0",
   "scripts": {
