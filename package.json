@@ -3,7 +3,7 @@
   "name": "realtime-remote-store",
   "version": "0.0.0",
   "scripts": {
-    "start": "ts-node index.ts",
+    "start": "ts-node server.ts",
     "test": "ts-node client.ts"
   },
   "dependencies": {

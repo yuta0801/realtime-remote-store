@@ -1,8 +1,22 @@
-import store, { initialState } from './store'
-import { createServer } from './transport'
+import { Store } from 'redux'
+import { from, PartialObserver, Subscribable } from 'rxjs'
 
-const server = createServer(initialState)
+interface Transport {
+  send: PartialObserver<unknown>,
+  receive: Subscribable<unknown>,
+}
 
-server.receive.subscribe(store.in)
+interface Options {
+  store: Store,
+  transport: (initialState: unknown) => Transport,
+}
 
-store.out.subscribe(server.send)
+const create = ({ store, transport }: Options) => {
+  const transport$ = transport(store.getState())
+  const store$ = { in: store.dispatch, out: from(store) }
+
+  transport$.receive.subscribe(store$.in)
+  store$.out.subscribe(transport$.send)
+}
+
+export default create
