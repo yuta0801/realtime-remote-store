@@ -1,9 +1,14 @@
 {
   "name": "realtime-remote-store",
   "version": "0.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "start": "ts-node --files example/server.ts",
-    "test": "ts-node --files example/client.ts"
+    "test": "ts-node --files example/client.ts",
+    "build": "microbundle build -f modern,cjs",
+    "prepublisOnly": "yarn build"
   },
   "dependencies": {
     "redux": "^4.0.4",
@@ -15,6 +20,7 @@
     "@types/reduce-reducers": "^0.3.0",
     "@types/redux-actions": "^2.6.1",
     "@types/ws": "^6.0.3",
+    "microbundle": "^0.12.0-next.6",
     "reduce-reducers": "^1.0.4",
     "redux-actions": "^2.6.5",
     "ts-node": "^8.4.1",
