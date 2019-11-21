@@ -1,5 +1,6 @@
 import { Store } from 'redux'
 import { from, PartialObserver, Subscribable } from 'rxjs'
+import WebSocket from './transport'
 
 interface Transport {
   send: PartialObserver<unknown>,
@@ -8,10 +9,10 @@ interface Transport {
 
 interface Options {
   store: Store,
-  transport: (initialState: unknown) => Transport,
+  transport?: (initialState: unknown) => Transport,
 }
 
-const create = ({ store, transport }: Options) => {
+const create = ({ store, transport = WebSocket }: Options) => {
   const transport$ = transport(store.getState())
   const store$ = { in: store.dispatch, out: from(store) }
 
